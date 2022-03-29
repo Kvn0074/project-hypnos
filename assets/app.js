@@ -14,3 +14,4 @@ import * as bootstrap from 'bootstrap';
 
 // start the Stimulus application
 import './bootstrap';
+import './script';
