@@ -11,6 +11,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+
+        <!-- LINK FONT-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
         <!-- TITLE / FAVICON -->
 
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -57,6 +65,25 @@
 
 
         {% block body %}{% endblock %}
+
+    <!--=================================================-->
+    <!--==========| C O N T A C T  L I N K |=============-->
+    <!--=================================================-->
+
+    {% if block('contact') is defined %}
+
+    <section class="contact-section">
+        <div class="contact">
+            <h4 class="contact-text">Vous avez des Questions ?<br>
+            Une demandes particulières ?<br>
+            n'hesitez pas</h4>
+            <div class="button-contact">
+                <span class="button-text">Contactez nous</span>
+            </div>
+        </div>
+    </section>
+
+    {% endif %}
 
     <!--=================================================-->
     <!--==========| F O O T E R |========================-->
