@@ -11,6 +11,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+        <!-- TITLE / FAVICON -->
+
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -20,6 +22,11 @@
 
     </head>
     <body>
+
+    <!--=================================================-->
+    <!--==========| N A V B A R |========================-->
+    <!--=================================================-->
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -44,8 +51,16 @@
         </div>
     </nav>
 
+    <!--=================================================-->
+    <!--==========| I N C L U D E S |====================-->
+    <!--=================================================-->
+
 
         {% block body %}{% endblock %}
+
+    <!--=================================================-->
+    <!--==========| F O O T E R |========================-->
+    <!--=================================================-->
 
     <footer class="footer">
         <div class="footer-social">
@@ -60,10 +75,14 @@
 
         <p class="footer-copyright">&copy; 2022 Hypnos group</p>
     </footer>
+
+    <!--=================================================-->
+    <!--==========| S C R I P T S |======================-->
+    <!--=================================================-->
+
         {% block javascripts %}
-            <!-- c'est quoi ca ?-->
             {{ encore_entry_script_tags('app') }}
-            <!-------------------->
         {% endblock %}
+
     </body>
 </html>

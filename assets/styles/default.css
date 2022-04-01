@@ -63,6 +63,27 @@ a {
     margin-top: 35px;
 }
 
+.presentation-title {
+    margin-bottom: 25px;
+    color: var(--pnk);
+}
+
+    /*===============| SEPARATOR |==============*/
+
+.separator-home {
+    width: 60%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px var(--wte) solid;
+    text-align: center;
+
+}
+
+.separator-home-text {
+    color: var(--pnk);
+}
 
 /*==============================================================================*/
 /*===========================  F O O T E R  ====================================*/
