@@ -20,7 +20,7 @@
 
     </head>
     <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img class="navbar-logo" src="{{ asset('img/logo-hypnos-simple.png') }}">
@@ -31,10 +31,10 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
+                        <a class="nav-link" href="#">Nos Hotel</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Prices</a>
+                        <a class="nav-link" href="#">Qui sommes nous ?</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
@@ -46,6 +46,20 @@
 
 
         {% block body %}{% endblock %}
+
+    <footer class="footer">
+        <div class="footer-social">
+            <!-- Pensez a mettre les lien sociaux -->
+            <a href="https://www.facebook.com/"><img class="footer-social-logo" src="{{ asset('img/fb-wte.png') }}" alt="facebook"></a>
+            <a href="https://www.instagram.com/"><img class="footer-social-logo" src="{{ asset('img/insta-wte.png') }}" alt="instagram"></a>
+        </div>
+        <h2 class="footer-title">HYPNOS HOTELS</h2>
+        <p class="footer-description">Love in a Haven</p>
+        <p class="footer-adress">666 rue de la bête<br>23000 Pluloin-Yarien</p>
+        <p class="footer-tel">+33 (0) 7 93 43 20 05</p>
+
+        <p class="footer-copyright">&copy; 2022 Hypnos group</p>
+    </footer>
         {% block javascripts %}
             <!-- c'est quoi ca ?-->
             {{ encore_entry_script_tags('app') }}
