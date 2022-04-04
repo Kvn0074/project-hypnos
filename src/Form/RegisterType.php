@@ -20,7 +20,7 @@ class RegisterType extends AbstractType
         $builder
             ->add('prenom', TextType::class, [
                 'label' => 'prenom',
-                'constraints'=> new Length(null, 2, 30),
+                'constraints'=> new Length(null, 2, 50),
                 'attr' => [
                     'placeholder' => "votre prenom",
                     'class' => "form-items"
@@ -28,7 +28,7 @@ class RegisterType extends AbstractType
             ])
             ->add('nom', TextType::class, [
                 'label' => 'nom',
-                'constraints'=> new Length(null, 2, 30),
+                'constraints'=> new Length(null, 2, 50),
                 'attr' => [
                     'placeholder' => "votre nom",
                     'class' => "form-items"
@@ -36,7 +36,7 @@ class RegisterType extends AbstractType
             ])
             ->add('email', EmailType::class, [
                 'label' => 'mail',
-                'constraints'=> new Length(null, 2, 60),
+                'constraints'=> new Length(null, 2, 180),
                 'attr' => [
                     'placeholder' => "votre mail",
                     'class' => "form-items"

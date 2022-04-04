@@ -14,6 +14,8 @@ use Symfony\Component\Routing\Annotation\Route;
 class RegisterController extends AbstractController
 {
 
+    /* ici on passe DOCTRINE dans notre constructeur via entitymanager */
+
     private $entityManager;
 
     public function __construct(EntityManagerInterface $entityManager)
