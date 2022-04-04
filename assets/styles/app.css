@@ -1,10 +1,5 @@
 @import "bootstrap.min.css";
 
-body {
-    background-color: pink;
-}
+@import "default.css";
 
-.image-test {
-    margin: 50px;
-    width: 10 0px;
-}
+@import "bootstrap-custom.css";

@@ -1,7 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- META COMPATIBILITE -->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+        <!-- LINK FONT-->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <!-- TITLE / FAVICON -->
+
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -9,11 +28,88 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
+    </head>
+    <body>
+
+    <!--=================================================-->
+    <!--==========| N A V B A R |========================-->
+    <!--=================================================-->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="navbar-logo" src="{{ asset('img/logo-hypnos-simple.png') }}">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nos Hotel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Qui sommes nous ?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--=================================================-->
+    <!--==========| I N C L U D E S |====================-->
+    <!--=================================================-->
+
+
+        {% block body %}{% endblock %}
+
+    <!--=================================================-->
+    <!--==========| C O N T A C T  L I N K |=============-->
+    <!--=================================================-->
+
+    {% if block('contact') is defined %}
+
+    <section class="contact-section">
+        <div class="contact">
+            <h4 class="contact-text">Vous avez des Questions ?<br>
+            Une demandes particulières ?<br>
+            n'hesitez pas</h4>
+            <div class="button-contact">
+                <span class="button-text">Contactez nous</span>
+            </div>
+        </div>
+    </section>
+
+    {% endif %}
+
+    <!--=================================================-->
+    <!--==========| F O O T E R |========================-->
+    <!--=================================================-->
+
+    <footer class="footer">
+        <div class="footer-social">
+            <!-- Pensez a mettre les lien sociaux -->
+            <a href="https://www.facebook.com/"><img class="footer-social-logo" src="{{ asset('img/fb-wte.png') }}" alt="facebook"></a>
+            <a href="https://www.instagram.com/"><img class="footer-social-logo" src="{{ asset('img/insta-wte.png') }}" alt="instagram"></a>
+        </div>
+        <h2 class="footer-title">HYPNOS HOTELS</h2>
+        <p class="footer-description">Love in a Haven</p>
+        <p class="footer-adress">666 rue de la bête<br>23000 Pluloin-Yarien</p>
+        <p class="footer-tel">+33 (0) 7 93 43 20 05</p>
+
+        <p class="footer-copyright">&copy; 2022 Hypnos group</p>
+    </footer>
+
+    <!--=================================================-->
+    <!--==========| S C R I P T S |======================-->
+    <!--=================================================-->
+
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
+
     </body>
 </html>

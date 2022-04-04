@@ -1,0 +1,162 @@
+/*==============================================================================*/
+/*==============================================================================*/
+/*===========================  C S S  F I L E  =================================*/
+/*==============================================================================*/
+/*==============================================================================*/
+
+/*==============================================================================*/
+/*===========================  G L O B A L  &  B A S E =========================*/
+/*==============================================================================*/
+
+    /*===============| GLOBAL |==============*/
+
+:root {
+    --blk       : #0D0D0D;
+    --light-blk : #1D1D1D;
+    --pnk       : #F848FF;
+    --wte       : #E8E8E8
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background: var(--blk);
+    color: var(--wte);
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+    /*===============| BASE.TWIG |==============*/
+
+        /*_| CONTACT DIV |_*/
+
+.contact {
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.button-contact {
+    border: 1px var(--wte) solid;
+    padding: 10px;
+    color: var(--pnk);
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+        /*_| FOOTER |_*/
+
+footer {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-top: 1px var(--wte) solid;
+    background-color: var(--light-blk);
+    color: var(--wte);
+    font-size: 0.9em;
+}
+
+footer p {
+    font-size: 0.9em;
+}
+
+.footer-social .footer-social-logo {
+    height: 35px;
+    margin: 20px;
+    opacity: 0.85; /* pour s'approcher de la couleur --light */
+    cursor: pointer;
+}
+
+.footer-title {
+    font-size: 1.2em;
+    letter-spacing: 8px;
+    margin-bottom: 0;
+    color: var(--pnk);
+    border-top: 1px var(--wte) solid;
+    padding-top: 15px;
+}
+
+.footer-tel {
+    color: var(--pnk);
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+/*==============================================================================*/
+/*=========================== H O M E ==========================================*/
+/*==============================================================================*/
+
+
+    /*===============| HEADER LOGO |==============*/
+
+.title {
+    height: calc(100vh - 55px);
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    width: 200px;
+    top: calc(50% - 70px);
+    left: calc(50% - 100px);
+}
+
+    /*===============| CAROUSEL |=================*/
+
+.carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+    /*===============| PRESENTATION |==============*/
+
+.presentation-container {
+    margin-top: 35px;
+}
+
+.presentation-title {
+    margin-bottom: 25px;
+    color: var(--pnk);
+}
+
+    /*===============| SEPARATOR |==============*/
+
+.separator-home {
+    width: 60%;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px var(--wte) solid;
+    text-align: center;
+
+}
+
+.separator-home-text {
+    color: var(--pnk);
+}
+
+
+
+
+
+
+
+/*==============================================================================*/
+/*==============================================================================*/
+
