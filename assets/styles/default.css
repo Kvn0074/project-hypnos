@@ -4,6 +4,25 @@
 /*==============================================================================*/
 /*==============================================================================*/
 
+/*===========================  S U M M A R Y  =================================*/
+/*
+_| 1 |_ GLOBAL & BASE
+        1 - Global
+        2 - Base Twig
+            2.1 - Contact Div
+            2.2 - Footer
+
+_| 2 |_ HOME
+    
+
+
+
+
+
+*/
+/*==============================================================================*/
+
+
 /*==============================================================================*/
 /*===========================  G L O B A L  &  B A S E =========================*/
 /*==============================================================================*/
@@ -27,6 +46,15 @@ body {
     background: var(--blk);
     color: var(--wte);
     font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h2 {
+    color: var(--pnk);
+    text-align: right;
+}
+
+label {
+    display: none;
 }
 
 a {
@@ -83,6 +111,7 @@ footer p {
 
 .footer-title {
     font-size: 1.2em;
+    text-align: center;
     letter-spacing: 8px;
     margin-bottom: 0;
     color: var(--pnk);
@@ -151,8 +180,49 @@ footer p {
     color: var(--pnk);
 }
 
+/*==============================================================================*/
+/*=========================== F O R M U L A I R E S ============================*/
+/*==============================================================================*/
 
+.formulaire {
+    width: 80%;
+    text-align: right;
+    margin-left: 20px;
+}
 
+.form-items {
+    background: none;
+    border: none;
+    color: var(--pnk);
+    text-align: left;
+    margin-top: 20px;
+    border-top: 1px var(--wte) solid;
+    border-bottom: 1px white solid;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-button {
+    background: none;
+    border: 1px var(--wte) solid;
+    color: var(--pnk);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+}
+
+.form-items::placeholder {
+    color: var(--pnk);
+    opacity: 0.65;
+}
+
+.form-items:focus {
+    background: var(--light-blk);
+    outline: none;
+}
 
 
 
