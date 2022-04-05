@@ -6,4 +6,7 @@
     <h2>Mon Compte</h2>
     bienvenue {{ app.user.prenom }} {{ app.user.nom }} sur votre page perso
     <br><hr>
+    <h4>Modifier mon mot de passe</h4>
+    <a href="{{ path('app_account_password') }}">Ici</a>
+    <hr>
 {% endblock %}

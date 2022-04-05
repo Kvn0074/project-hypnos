@@ -66,6 +66,10 @@ a {
     text-decoration: none;
 }
 
+a:visited {
+    color: var(--pnk);
+}
+
 a:hover {
     color: deeppink;
 }
@@ -215,6 +219,13 @@ footer p {
     border: 1px var(--pnk) solid;
     padding: 15px;
     color: var(--pnk);
+}
+
+.alert-info {
+    background: none;
+    border: 1px var(--pnk) solid;
+    padding: 15px;
+    color: var(--wte);
 }
 
 .formulaire li {
