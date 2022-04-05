@@ -20,6 +20,7 @@ class RegisterType extends AbstractType
         $builder
             ->add('prenom', TextType::class, [
                 'label' => 'prenom',
+                'required' => true,
                 'constraints'=> new Length(null, 2, 50),
                 'attr' => [
                     'placeholder' => "votre prenom",
@@ -28,6 +29,7 @@ class RegisterType extends AbstractType
             ])
             ->add('nom', TextType::class, [
                 'label' => 'nom',
+                'required' => true,
                 'constraints'=> new Length(null, 2, 50),
                 'attr' => [
                     'placeholder' => "votre nom",
@@ -36,6 +38,7 @@ class RegisterType extends AbstractType
             ])
             ->add('email', EmailType::class, [
                 'label' => 'mail',
+                'required' => true,
                 'constraints'=> new Length(null, 2, 180),
                 'attr' => [
                     'placeholder' => "votre mail",
@@ -44,7 +47,7 @@ class RegisterType extends AbstractType
             ])
             ->add('password', RepeatedType::class, [
                 'type' => PasswordType::class,
-                'invalid_message' => 'les mots de passes doivent être identique' ,
+                'invalid_message' => 'les mots de passes doivent être identiques' ,
                 'label' => 'votre mot de passe',
                 'required' => true,
                 'first_options' => [

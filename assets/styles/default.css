@@ -19,7 +19,9 @@ _| 2 |_ HOME
         3 - Presentation
         4 - Separator
 
-_| 3 |_ FORMULAIRE
+_| 3 |_ FORMULAIRES
+        1 - Headers
+        2 - Forms
 
 _____________________________________*/
 /*==============================================================================*/
@@ -50,7 +52,7 @@ body {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
-h2 {
+h1, h2 {
     color: var(--pnk);
     text-align: right;
 }
@@ -185,6 +187,31 @@ footer p {
 /*========================================================================| 3 |=*/
 /*=========================== F O R M U L A I R E S ============================*/
 /*==============================================================================*/
+
+    /*===============| HEADERS |==========[1]=*/
+
+.header-register-container,
+.header-login-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+li {
+    font-size: 0.7em;
+    background: #fc71ed;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    margin-top: 30px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+    /*===============| FORMS |==========[2]=*/
 
 .formulaire {
     width: 80%;
