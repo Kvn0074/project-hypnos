@@ -21,7 +21,8 @@ _| 2 |_ HOME
 
 _| 3 |_ FORMULAIRES
         1 - Headers
-        2 - Forms
+        2 - Messages
+        3 - Forms
 
 _____________________________________*/
 /*==============================================================================*/
@@ -36,7 +37,7 @@ _____________________________________*/
 :root {
     --blk       : #0D0D0D;
     --light-blk : #1D1D1D;
-    --pnk       : #F848FF;
+    --pnk       : #f848ff;
     --wte       : #E8E8E8
 }
 
@@ -63,6 +64,10 @@ label {
 
 a {
     text-decoration: none;
+}
+
+a:hover {
+    color: deeppink;
 }
 
     /*===============| BASE.TWIG |==========[2]=*/
@@ -196,6 +201,22 @@ footer p {
     margin-bottom: 40px;
 }
 
+    /*===============| MESSAGES |==========[2]=*/
+
+.alert {
+    width: 60%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alert-danger {
+    background: none;
+    border: 1px var(--pnk) solid;
+    padding: 15px;
+    color: var(--pnk);
+}
+
 .formulaire li {
     font-size: 0.7em;
     background: #fc71ed;
@@ -212,7 +233,7 @@ footer p {
     margin-bottom: 0;
 }
 
-    /*===============| FORMS |==========[2]=*/
+    /*===============| FORMS |==========[3]=*/
 
 .formulaire {
     width: 80%;

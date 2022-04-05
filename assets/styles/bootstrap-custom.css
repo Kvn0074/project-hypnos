@@ -43,8 +43,13 @@
     color: rgb(82, 81, 95);
 }
 
-.navbar-collapse .navbar-nav .nav-item .nav-link { /* positionnement nav items */
-    text-align: center;
+.navbar-collapse .navbar-nav .nav-item .nav-link,
+.logs { /* positionnement nav items */
+    text-align: right;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.logs-link {
+    color: var(--pnk);
 }
