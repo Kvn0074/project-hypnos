@@ -196,16 +196,17 @@ footer p {
     margin-bottom: 40px;
 }
 
-li {
+.formulaire li {
     font-size: 0.7em;
     background: #fc71ed;
     padding: 10px;
     border-radius: 5px;
     text-align: left;
     margin-top: 30px;
+    width: 80%;
 }
 
-ul {
+.formulaire ul {
     list-style-type: none;
     padding: 0;
     margin-bottom: 0;
