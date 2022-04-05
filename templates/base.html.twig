@@ -37,14 +37,14 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ path('app_home') }}">
                 <img class="navbar-logo" src="{{ asset('img/logo-hypnos-simple.png') }}">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav ">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Nos Hotel</a>
                     </li>
@@ -55,6 +55,13 @@
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
+                <div class="logs">
+                    {% if app.user %}
+                        <a class="logs-link account" href="{{ path('app_account') }}"> Mon compte <small>({{ app.user.prenom }})</small></a> | <a class="logs-link logout" href="{{ path('app_logout') }}"> Deconnexion </a>
+                    {% else %}
+                        <a class="logs-link login" href="{{ path('app_login') }}"> Connexion </a> | <a class="logs-link signin" href="{{ path('app_register') }}"> Inscription </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </nav>

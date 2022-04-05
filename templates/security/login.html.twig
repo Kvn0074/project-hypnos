@@ -21,8 +21,8 @@
     {% endif %}
 
     {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+        <div class="alert alert-danger">
+            {{ app.user.prenom }}, vous etes déjà connecté avec l'adresse : {{ app.user.email }}, <a href="{{ path('app_logout') }}"> Déconexion</a>
         </div>
     {% endif %}
     <div class="formulaire">
@@ -47,7 +47,7 @@
         #}
 
         <button class="form-button" type="submit">
-            Sign in
+            Se connecter
         </button>
     </div>
 </form>
