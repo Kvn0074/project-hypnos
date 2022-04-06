@@ -1,20 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RegisterController!{% endblock %}
+{% block title %}inscription{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <!--=================================================-->
+    <!--==========| H E A D E R |========================-->
+    <!--=================================================-->
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/kevin/Desktop/Files/Eval-ECF/project-hypnos/src/Controller/RegisterController.php'|file_link(0) }}">src/Controller/RegisterController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/kevin/Desktop/Files/Eval-ECF/project-hypnos/templates/register/index.html.twig'|file_link(0) }}">templates/register/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <header class="header-register">
+        <div class="container-fluid header-register-container">
+            <div class="row register-row">
+                <div class="col-md-6 register-main">
+                    <h2> Inscrivez vous </h2>
+                </div>
+                <div class="col-md-6 register-texts">
+                    <p> Simplifiez vos reservations</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--=================================================-->
+    <!--==========| F O R M U L A I R E |================-->
+    <!--=================================================-->
+
+    <div class="formulaire">
+    {{ form(form) }}
+    </div>
+
 {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <header class="header-login">
+        <div class="container-fluid header-login-container">
+            <div class="row login-row">
+                <div class="col-md-6 login-main">
+                    <h2> Connectez-vous </h2>
+                </div>
+                <div class="col-md-6 login-texts">
+                    <p> Accedez à votre compte et à vos reservations</p>
+                </div>
+            </div>
+        </div>
+    </header>
+<form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="alert alert-danger">
+            {{ app.user.prenom }}, vous etes déjà connecté avec l'adresse : {{ app.user.email }}, <a href="{{ path('app_logout') }}"> Déconexion</a>
+        </div>
+    {% endif %}
+    <div class="formulaire">
+        <label for="inputEmail">Email</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-items" placeholder="email"  autocomplete="email" required autofocus>
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" id="inputPassword" class="form-items" placeholder="mot de passe" autocomplete="current-password" required>
+
+        <input type="hidden" name="_csrf_token"
+               value="{{ csrf_token('authenticate') }}"
+        >
+
+        {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" name="_remember_me"> Remember me
+                </label>
+            </div>
+        #}
+
+        <button class="form-button" type="submit">
+            Se connecter
+        </button>
+    </div>
+</form>
+{% endblock %}
