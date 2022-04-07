@@ -18,7 +18,7 @@ class Etablissement
     #[ORM\Column(type: 'string', length: 80)]
     private $nom;
 
-    #[ORM\Column(type: 'string', length: 250)]
+    #[ORM\Column(type: 'text')]
     private $description;
 
     #[ORM\Column(type: 'string', length: 160)]
@@ -32,6 +32,9 @@ class Etablissement
 
     #[ORM\OneToMany(mappedBy: 'id_hotel', targetEntity: Suite::class)]
     private $suites;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $photo;
 
     public function __construct()
     {
@@ -129,6 +132,18 @@ class Etablissement
                 $suite->setIdHotel(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }

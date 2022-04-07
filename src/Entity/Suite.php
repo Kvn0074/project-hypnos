@@ -25,6 +25,9 @@ class Suite
     #[ORM\ManyToOne(targetEntity: Etablissement::class, inversedBy: 'suites')]
     private $id_hotel;
 
+    #[ORM\Column(type: 'text')]
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Suite
     public function setIdHotel(?Etablissement $id_hotel): self
     {
         $this->id_hotel = $id_hotel;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
