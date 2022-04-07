@@ -24,6 +24,7 @@ class EtablissementCrudController extends AbstractCrudController
            TextField::new('adresse'),
            TextField::new('ville'),
            IntegerField::new('code_postale'),
+           TextField::new('description_small'),
            TextareaField::new('description'),
            ImageField::new('photo')
                ->setBasePath('uploads/files')

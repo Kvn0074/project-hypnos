@@ -36,6 +36,9 @@ class Etablissement
     #[ORM\Column(type: 'string', length: 255)]
     private $photo;
 
+    #[ORM\Column(type: 'string', length: 95)]
+    private $description_small;
+
     public function __construct()
     {
         $this->suites = new ArrayCollection();
@@ -144,6 +147,18 @@ class Etablissement
     public function setPhoto(string $photo): self
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getDescriptionSmall(): ?string
+    {
+        return $this->description_small;
+    }
+
+    public function setDescriptionSmall(string $description_small): self
+    {
+        $this->description_small = $description_small;
 
         return $this;
     }

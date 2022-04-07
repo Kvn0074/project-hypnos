@@ -74,19 +74,23 @@
     <div class="container-fluid hotels-container">
     {%  for etablissement in etablissements %}
         <div class="row hotel-row">
-            <div class="col-md-6 hotel-picture-div">
+            <div class="col-sm-6 hotel-picture-div">
                 <img class="hotel-picture-small" src="uploads/files/{{ etablissement.photo }}">
             </div>
-            <div class="col-md-6 hotel-description-div">
-                <h2 class="hotel-name-small">{{ etablissement.nom }}</h2>
-                <h4 class="hotel-location-small">{{ etablissement.ville }}</h4>
-                <p class="hotel-description-small">{{ etablissement.description }}</p>
+            <div class="col-sm-6 hotel-description-div">
+                <div class="test">
+                    <h2 class="hotel-name-small">{{ etablissement.nom }}</h2>
+                    <h4 class="hotel-location-small">{{ etablissement.ville }}</h4>
+                    <p class="hotel-description-small">{{ etablissement.descriptionSmall }}</p>
+                </div>
                 <div class="hotel-button-plus">
-                    <span class="hotel-button-text">ok</span>
+                    <span class="hotel-button-text">En Savoir Plus</span>
                 </div>
             </div>
+            <div class="separator-home"></div>
         </div>
     {% endfor %}
+    </div>
 
 {% endblock %}
 
