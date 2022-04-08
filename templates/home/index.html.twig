@@ -84,9 +84,11 @@
                     <p class="hotel-descriptionSmall-small">{{ etablissement.descriptionIntro }}</p>
                     <p class="hotel-description-small">{{ etablissement.description }}</p>
                 </div>
-                <div class="hotel-button-plus">
-                    <span class="hotel-button-text">En Savoir Plus</span>
-                </div>
+                <a href="{{ path('app_hotel', {'slug' : etablissement.slug}) }}">
+                    <div class="hotel-button-plus">
+                        <span class="hotel-button-text">En Savoir Plus</span>
+                    </div>
+                </a>
             </div>
             <div class="separator-home"></div>
         </div>

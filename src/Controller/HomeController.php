@@ -28,4 +28,18 @@ class HomeController extends AbstractController
             'etablissements' => $etablissements
         ]);
     }
+
+    #[Route('/{slug}', name: 'app_hotel')]
+    public function show($slug): Response
+    {
+        $etablissement = $this->entityManager->getRepository(Etablissement::class)->findOneBySlug($slug);
+
+        if(!$etablissement) {
+            return $this->redirectToRoute('app_home');
+        }
+        return $this->render('home/show.html.twig', [
+            'etablissement' => $etablissement
+        ]);
+    }
+
 }
