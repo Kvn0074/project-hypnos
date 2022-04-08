@@ -37,7 +37,10 @@ class Etablissement
     private $photo;
 
     #[ORM\Column(type: 'string', length: 95)]
-    private $description_small;
+    private $description_intro;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $slug;
 
     public function __construct()
     {
@@ -151,14 +154,26 @@ class Etablissement
         return $this;
     }
 
-    public function getDescriptionSmall(): ?string
+    public function getDescriptionIntro(): ?string
     {
-        return $this->description_small;
+        return $this->description_intro;
     }
 
-    public function setDescriptionSmall(string $description_small): self
+    public function setDescriptionIntro(string $description_intro): self
     {
-        $this->description_small = $description_small;
+        $this->description_intro = $description_intro;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

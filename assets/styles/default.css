@@ -210,8 +210,12 @@ footer p {
     padding-bottom: 0;
 }
 
-.hotel-description-small {
+.hotel-descriptionSmall-small {
     font-size: 1em;
+}
+
+.hotel-description-small {
+    display: none;
 }
 
 .hotel-picture-small {
@@ -227,10 +231,12 @@ footer p {
 
 .hotel-location-small {
     font-size: 0.7em;
+    text-transform: capitalize;
 }
 
 .hotel-button-plus {
     text-align: center;
+    cursor: pointer;
 }
 
 .hotel-button-text {
@@ -245,7 +251,7 @@ footer p {
     .hotel-picture-div{
         width: 45%;
     }
-    .hotel-description-small {
+    .hotel-descriptionSmall-small {
         font-size: 1em;
     }
     .hotel-button-plus {
@@ -258,8 +264,14 @@ footer p {
 }
 
 @media (min-width: 576px) and (max-width: 700px){
-    .hotel-description-small {
+    .hotel-descriptionSmall-small {
         font-size: 0.85em;
+    }
+}
+
+@media (min-width: 1070px) {
+    .hotel-description-small {
+        display: block;
     }
 }
 
