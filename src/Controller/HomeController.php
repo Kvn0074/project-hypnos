@@ -37,7 +37,7 @@ class HomeController extends AbstractController
         if(!$etablissement) {
             return $this->redirectToRoute('app_home');
         }
-        return $this->render('home/show.html.twig', [
+        return $this->render('home/hotel.html.twig', [
             'etablissement' => $etablissement
         ]);
     }
