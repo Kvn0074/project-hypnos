@@ -58,6 +58,7 @@
 
     <div class="container-fluid suites-container">
         {%  for suite in suites %}
+            {% if etablissement.nom == suite.idHotel %}
             <div class="row suite-row">
                 <div class="col-sm-6 suite-picture-div">
                     <img class="suite-picture-small" src="uploads/files/{{ suite.photoPrincipale }}">
@@ -70,13 +71,14 @@
                         <h4 class="suite-prix">{{ suite.prix }} / nuit</h4>
                     </div>
                     <a href="{{ path('app_suite',{'slug' : suite.slug } ) }}">
-                        <div class="suite-button-savoir">
+                        <div class="suite-button-plus">
                             <span class="suite-button-text">En Savoir Plus</span>
                         </div>
                     </a>
                 </div>
                 <div class="separator-home"></div>
             </div>
+            {% endif %}
         {% endfor %}
     </div>
 
