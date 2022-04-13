@@ -52,6 +52,34 @@
         </div>
     </section>
 
+    <!--=================================================-->
+    <!--==========| S U I T E S |========================-->
+    <!--=================================================-->
+
+    <div class="container-fluid suites-container">
+        {%  for suite in suites %}
+            <div class="row suite-row">
+                <div class="col-sm-6 suite-picture-div">
+                    <img class="suite-picture-small" src="uploads/files/{{ suite.photoPrincipale }}">
+                </div>
+                <div class="col-sm-6 suite-description-div">
+                    <div class="test">
+                        <h2 class="suite-name-small">{{ suite.nom }}</h2>
+                        <p class="suite-descriptionSmall-small">{{ suite.descriptionIntro }}</p>
+                        <p class="suite-description-small">{{ suite.description }}</p>
+                        <h4 class="suite-prix">{{ suite.prix }} / nuit</h4>
+                    </div>
+                    <a href="{{ path('app_suite',{'slug' : suite.slug } ) }}">
+                        <div class="suite-button-savoir">
+                            <span class="suite-button-text">En Savoir Plus</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="separator-home"></div>
+            </div>
+        {% endfor %}
+    </div>
+
 
 {% endblock %}
 

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2 class="suite-name-small">{{ suite.nom }}</h2>
+
+
+    {%  for etablissement in etablissements %}
+        {% if etablissement.nom == suite.idHotel %}
+            <a href="{{ path('app_hotel',{'slug' : etablissement.slug } ) }}"> retour hotel {{ etablissement.nom }}</a>
+        {% endif %}
+    {% endfor %}
+
+
+    <!-- penser retour hotel -->
+
+{% endblock %}
+
