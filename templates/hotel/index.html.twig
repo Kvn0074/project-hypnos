@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!--=================================================-->
+    <!--==========| H E A D E R |========================-->
+    <!--=================================================-->
+
+    <header class="header-hotel">
+        <div class="hotel">
+            <img class="hotel-picture" src="uploads/files/{{ etablissement.photo }}">
+
+            <div class="hotel-information">
+                <h1 class="hotel-name">{{ etablissement.nom }}</h1>
+                <h2 class="hotel-location">{{ etablissement.ville }}</h2>
+            </div>
+
+        </div>
+    </header>
+
+    <!--=================================================-->
+    <!--==========| P R E S E N T A T I O N |============-->
+    <!--=================================================-->
+
+    <section class="presentation-section">
+
+        <div class="container-fluid presentation-container">
+            <div class="row presentation-row">
+                <div class="col-md-6 presentation-main">
+                    <h2 class="presentation-title">{{ etablissement.nom }}</h2>
+                </div>
+                <div class="col-md-6 presentation-texts">
+                    <p class="presenation-text">Notre promesse dans tout les hotel Hypnos est de vous offrir
+                        un instant, un moment, en dehors du temps ou vous pourrez oublié jusqu'au plus petit de vos
+                        soucis. <br>
+                        Les plus belles chambres, les plus beau hotel, les plus beau lieux, pour vous retrouvez avec
+                        qui vous voulez, on est loin du mac do, mais venez comme vous êtes, on se charge du reste<p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--=================================================-->
+    <!--==========| S E P A R A T O R |==================-->
+    <!--=================================================-->
+
+    <section class="section-separator-home">
+
+        <div class="separator-home">
+            <p class="separator-home-text">Les Suites</p>
+        </div>
+    </section>
+
+    <!--=================================================-->
+    <!--==========| S U I T E S |========================-->
+    <!--=================================================-->
+
+    <div class="container-fluid suites-container">
+        {%  for suite in suites %}
+            {% if etablissement.nom == suite.idHotel %}
+            <div class="row suite-row">
+                <div class="col-sm-6 suite-picture-div">
+                    <img class="suite-picture-small" src="uploads/files/{{ suite.photoPrincipale }}">
+                </div>
+                <div class="col-sm-6 suite-description-div">
+                    <div class="test">
+                        <h2 class="suite-name-small">{{ suite.nom }}</h2>
+                        <p class="suite-descriptionSmall-small">{{ suite.descriptionIntro }}</p>
+                        <p class="suite-description-small">{{ suite.description }}</p>
+                        <h4 class="suite-prix">{{ suite.prix }} / nuit</h4>
+                    </div>
+                    <a href="{{ path('app_suite',{'slug' : suite.slug } ) }}">
+                        <div class="suite-button-plus">
+                            <span class="suite-button-text">En Savoir Plus</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="separator-home"></div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
+
+{% block contact %}{% endblock %}

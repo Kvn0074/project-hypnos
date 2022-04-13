@@ -67,6 +67,34 @@
         </div>
     </section>
 
+    <!--=================================================-->
+    <!--==========| H O T E L S |========================-->
+    <!--=================================================-->
+
+    <div class="container-fluid hotels-container">
+    {%  for etablissement in etablissements %}
+        <div class="row hotel-row">
+            <div class="col-sm-6 hotel-picture-div">
+                <img class="hotel-picture-small" src="uploads/files/{{ etablissement.photo }}">
+            </div>
+            <div class="col-sm-6 hotel-description-div">
+                <div class="test">
+                    <h2 class="hotel-name-small">{{ etablissement.nom }}</h2>
+                    <h4 class="hotel-location-small">{{ etablissement.ville }}</h4>
+                    <p class="hotel-descriptionSmall-small">{{ etablissement.descriptionIntro }}</p>
+                    <p class="hotel-description-small">{{ etablissement.description }}</p>
+                </div>
+                <a href="{{ path('app_hotel', {'slug' : etablissement.slug}) }}">
+                    <div class="hotel-button-plus">
+                        <span class="hotel-button-text">En Savoir Plus</span>
+                    </div>
+                </a>
+            </div>
+            <div class="separator-home"></div>
+        </div>
+    {% endfor %}
+    </div>
+
 {% endblock %}
 
 {% block contact %}{% endblock %}

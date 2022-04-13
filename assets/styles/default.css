@@ -18,8 +18,14 @@ _| 2 |_ HOME
         2 - Carousel
         3 - Presentation
         4 - Separator
+        5 - Hotels
 
-_| 3 |_ FORMULAIRES
+_| 3 |_ HOTEL & SUITE
+        1 - Hotel
+        2 - Suite
+
+
+_| 4 |_ FORMULAIRES
         1 - Headers
         2 - Messages
         3 - Forms
@@ -38,7 +44,10 @@ _____________________________________*/
     --blk       : #0D0D0D;
     --light-blk : #1D1D1D;
     --pnk       : #f848ff;
-    --wte       : #E8E8E8
+    --deep-pnk  : #ff1493ff;
+    --wte       : #E8E8E8;
+    --txt-shdw  : -1px -1px 1px rgba(0,0,0,.25), 1px 1px 1px rgba(0,0,0,.25),
+    -3px -3px 4px rgba(0,0,0,.5), 3px 3px 4px rgba(0,0,0,.5);
 }
 
 * {
@@ -46,11 +55,13 @@ _____________________________________*/
     padding: 0;
 }
 
+
 body {
     box-sizing: border-box;
     background: var(--blk);
     color: var(--wte);
     font-family: 'Montserrat Alternates', sans-serif;
+
 }
 
 h1, h2 {
@@ -71,7 +82,7 @@ a:visited {
 }
 
 a:hover {
-    color: deeppink;
+    color: var(--deep-pnk);
 }
 
     /*===============| BASE.TWIG |==========[2]=*/
@@ -174,6 +185,7 @@ footer p {
 .presentation-title {
     margin-bottom: 25px;
     color: var(--pnk);
+    text-transform: capitalize;
 }
 
     /*===============| SEPARATOR |==========[4]=*/
@@ -191,9 +203,169 @@ footer p {
 
 .separator-home-text {
     color: var(--pnk);
+    text-transform: capitalize;
+}
+
+    /*===============| HOTELS |==========[5]=*/
+
+.hotel-picture-div,
+.suite-picture-div {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+}
+
+.hotel-description-div,
+.suite-description-div {
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.hotel-descriptionSmall-small,
+.suite-descriptionSmall-small {
+    font-size: 1em;
+}
+
+.hotel-description-small,
+.suite-description-small {
+    display: none;
+}
+
+.hotel-picture-small,
+.suite-picture-small{
+    width: 100%;
+}
+
+.hotel-name-small,
+.suite-name-small{
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.hotel-location-small {
+    font-size: 0.7em;
+    text-transform: capitalize;
+}
+
+.hotel-button-plus,
+.suite-button-plus{
+    text-align: center;
+    cursor: pointer;
+}
+
+.hotel-button-text,
+.suite-button-text {
+    font-size: 0.7em;
+    border: 1px var(--wte) solid;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+    /*|__/ M E D I A S \___|*/
+
+@media (min-width: 576px) {
+    .hotel-picture-div,
+    .suite-picture-div {
+        width: 45%;
+    }
+    .hotel-descriptionSmall-small,
+    .suite-descriptionSmall-small {
+        font-size: 1em;
+    }
+    .hotel-button-plus,
+    .suite-button-plus {
+        text-align: right;
+        margin-right: 20px;
+    }
+    .test{
+        height: 80%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 700px){
+    .hotel-descriptionSmall-small
+    .suite-descriptionSmall-small {
+        font-size: 0.85em;
+    }
+}
+
+@media (min-width: 1070px) {
+    .hotel-description-small,
+    .suite-description-small {
+        display: block;
+    }
 }
 
 /*========================================================================| 3 |=*/
+/*=========================== H O T E L  &  S U I T E ==========================*/
+/*==============================================================================*/
+
+.hotel,
+.suite {
+    position: relative;
+}
+
+.hotel-picture,
+.suite-picture {
+    width: 100%;
+}
+
+.hotel-information,
+.suite-information {
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    right: 10px;
+    left: 10px;
+}
+
+.hotel-name,
+.suite-name {
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 25%;
+    margin-bottom: -10px;
+    font-size: 14vw;
+    text-shadow: var(--txt-shdw);
+    opacity: 0.9;
+}
+
+.hotel-location {
+    color: var(--wte);
+    text-align: center;
+    text-shadow: var(--txt-shdw);
+}
+
+    /*|__/ M E D I A S \___|*/
+
+@media (min-width: 1200px) {
+    .hotel,
+    .suite {
+        height: calc(50vh - 55px);
+        overflow: hidden;
+    }
+
+    .hotel-name,
+    .suite-name {
+        margin-top: 10vh;
+    }
+
+    .hotel-picture {
+        margin-top: -25vh;
+    }
+
+    .suite-picture {
+        margin-top: -15vh;
+    }
+}
+
+
+/*========================================================================| 4 |=*/
 /*=========================== F O R M U L A I R E S ============================*/
 /*==============================================================================*/
 

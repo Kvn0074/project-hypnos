@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!--=================================================-->
+    <!--==========| H E A D E R |========================-->
+    <!--=================================================-->
+
+    <header class="header-suite">
+        <div class="suite">
+            <img class="suite-picture" src="/uploads/files/{{ suite.photoPrincipale }}">
+
+            <div class="suite-information">
+                <h1 class="suite-name">{{ suite.nom }}</h1>
+            </div>
+        </div>
+    </header>
+
+    <!--=================================================-->
+    <!--==========| P R E S E N T A T I O N |============-->
+    <!--=================================================-->
+
+    <section class="presentation-section">
+
+        <div class="container-fluid presentation-container">
+            <div class="row presentation-row">
+                <div class="col-md-6 presentation-main">
+                    <h2 class="presentation-title">La suite {{ suite.nom }}</h2>
+                </div>
+                <div class="col-md-6 presentation-texts">
+                    <p class="presenation-text">Notre promesse dans tout les hotel Hypnos est de vous offrir
+                        un instant, un moment, en dehors du temps ou vous pourrez oublié jusqu'au plus petit de vos
+                        soucis. <br>
+                        Les plus belles chambres, les plus beau hotel, les plus beau lieux, pour vous retrouvez avec
+                        qui vous voulez, on est loin du mac do, mais venez comme vous êtes, on se charge du reste<p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--=================================================-->
+    <!--==========| S E P A R A T O R |==================-->
+    <!--=================================================-->
+
+    <section class="section-separator-home">
+
+        <div class="separator-home">
+        </div>
+    </section>
+
+    <!--=================================================-->
+    <!--==========| S E P A R A T O R |==================-->
+    <!--=================================================-->
+
+    <section class="section-separator-home">
+
+        <div class="separator-home">
+        </div>
+    </section>
+
+
+    {%  for etablissement in etablissements %}
+        {% if etablissement.nom == suite.idHotel %}
+            <a href="{{ path('app_hotel',{'slug' : etablissement.slug } ) }}"> retour hotel {{ etablissement.nom }}</a>
+        {% endif %}
+    {% endfor %}
+
+{% endblock %}
+
+
+

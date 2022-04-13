@@ -18,7 +18,7 @@ class Etablissement
     #[ORM\Column(type: 'string', length: 80)]
     private $nom;
 
-    #[ORM\Column(type: 'string', length: 250)]
+    #[ORM\Column(type: 'text')]
     private $description;
 
     #[ORM\Column(type: 'string', length: 160)]
@@ -33,9 +33,23 @@ class Etablissement
     #[ORM\OneToMany(mappedBy: 'id_hotel', targetEntity: Suite::class)]
     private $suites;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $photo;
+
+    #[ORM\Column(type: 'string', length: 95)]
+    private $description_intro;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $slug;
+
     public function __construct()
     {
         $this->suites = new ArrayCollection();
+    }
+
+    public function  __toString()
+    {
+        return $this->getNom();
     }
 
     public function getId(): ?int
@@ -129,6 +143,42 @@ class Etablissement
                 $suite->setIdHotel(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(string $photo): self
+    {
+        $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getDescriptionIntro(): ?string
+    {
+        return $this->description_intro;
+    }
+
+    public function setDescriptionIntro(string $description_intro): self
+    {
+        $this->description_intro = $description_intro;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
