@@ -365,6 +365,8 @@ GLOBAL & BASE / Base Twig / Contact Div
 .suite-pic {
     width: 80%;
     margin: 20px;
+    border: 2px var(--light-blk) solid ;
+    border-radius: 2px;
 }
 
 .hotel-button-plus,
