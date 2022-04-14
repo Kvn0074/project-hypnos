@@ -18,12 +18,10 @@ _| 2 |_ HOME
         2 - Carousel
         3 - Presentation
         4 - Separator
-        5 - Hotels
 
 _| 3 |_ HOTEL & SUITE
-        1 - Hotel
-        2 - Suite
-
+        1 - Pages
+        2 - Gallery
 
 _| 4 |_ FORMULAIRES
         1 - Headers
@@ -58,6 +56,7 @@ _____________________________________*/
 
 body {
     box-sizing: border-box;
+    min-width: 350px;
     background: var(--blk);
     color: var(--wte);
     font-family: 'Montserrat Alternates', sans-serif;
@@ -101,12 +100,18 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.button-contact {
+.button {
     border: 1px var(--wte) solid;
     padding: 10px;
     color: var(--pnk);
     margin-bottom: 25px;
     cursor: pointer;
+}
+
+.button-text {
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 0.8em;
 }
 
         /*_| FOOTER |_*/
@@ -206,103 +211,13 @@ footer p {
     text-transform: capitalize;
 }
 
-    /*===============| HOTELS |==========[5]=*/
 
-.hotel-picture-div,
-.suite-picture-div {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0;
-}
-
-.hotel-description-div,
-.suite-description-div {
-    padding: 10px;
-    padding-bottom: 0;
-}
-
-.hotel-descriptionSmall-small,
-.suite-descriptionSmall-small {
-    font-size: 1em;
-}
-
-.hotel-description-small,
-.suite-description-small {
-    display: none;
-}
-
-.hotel-picture-small,
-.suite-picture-small{
-    width: 100%;
-}
-
-.hotel-name-small,
-.suite-name-small{
-    text-align: left;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    font-size: 1em;
-}
-
-.hotel-location-small {
-    font-size: 0.7em;
-    text-transform: capitalize;
-}
-
-.hotel-button-plus,
-.suite-button-plus{
-    text-align: center;
-    cursor: pointer;
-}
-
-.hotel-button-text,
-.suite-button-text {
-    font-size: 0.7em;
-    border: 1px var(--wte) solid;
-    padding: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-    /*|__/ M E D I A S \___|*/
-
-@media (min-width: 576px) {
-    .hotel-picture-div,
-    .suite-picture-div {
-        width: 45%;
-    }
-    .hotel-descriptionSmall-small,
-    .suite-descriptionSmall-small {
-        font-size: 1em;
-    }
-    .hotel-button-plus,
-    .suite-button-plus {
-        text-align: right;
-        margin-right: 20px;
-    }
-    .test{
-        height: 80%;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 700px){
-    .hotel-descriptionSmall-small
-    .suite-descriptionSmall-small {
-        font-size: 0.85em;
-    }
-}
-
-@media (min-width: 1070px) {
-    .hotel-description-small,
-    .suite-description-small {
-        display: block;
-    }
-}
 
 /*========================================================================| 3 |=*/
 /*=========================== H O T E L  &  S U I T E ==========================*/
 /*==============================================================================*/
+
+    /*===============| PAGES |==========[1]=*/
 
 .hotel,
 .suite {
@@ -335,11 +250,38 @@ footer p {
     opacity: 0.9;
 }
 
+.suite-title {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.suite-price {
+    text-transform: capitalize;
+    color: var(--wte);
+    text-align: center;
+    font-size: 0.9em;
+}
+
 .hotel-location {
     color: var(--wte);
     text-align: center;
     text-shadow: var(--txt-shdw);
 }
+
+.button-resa-booking,
+.button-resa-us,
+.back-to-button {
+    width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*=======================================================
+La Corps et le text des boutons est gerer par la class
+.button et .button-text elles se trouvent dans la section
+GLOBAL & BASE / Base Twig / Contact Div
+=======================================================*/
 
     /*|__/ M E D I A S \___|*/
 
@@ -361,6 +303,125 @@ footer p {
 
     .suite-picture {
         margin-top: -15vh;
+    }
+}
+
+    /*===============| GALLERY |==========[2]=*/
+
+.hotel-picture-div,
+.suite-picture-div {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+}
+
+.hotel-description-div,
+.suite-description-div {
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.hotel-descriptionSmall-small,
+.suite-descriptionSmall-small {
+    font-size: 1em;
+}
+
+.hotel-description-small,
+.suite-description-small {
+    display: none;
+}
+
+.hotel-picture-small,
+.suite-picture-small{
+    width: 100%;
+}
+
+.hotel-name-small,
+.suite-name-small{
+    text-align: left;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.hotel-location-small {
+    font-size: 0.7em;
+    text-transform: capitalize;
+}
+
+.suite-prix {
+    color: var(--pnk);
+    text-align: right;
+    margin-right: 25px;
+}
+
+.pics-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.suite-pic {
+    width: 80%;
+    margin: 20px;
+}
+
+.hotel-button-plus,
+.suite-button-plus {
+    text-align: center;
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.hotel-button-text,
+.suite-button-text {
+    font-size: 0.7em;
+    border: 1px var(--wte) solid;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/*|__/ M E D I A S \___|*/
+
+@media (min-width: 576px) {
+    .hotel-picture-div,
+    .suite-picture-div {
+        width: 45%;
+    }
+    .hotel-descriptionSmall-small,
+    .suite-descriptionSmall-small {
+        font-size: 1em;
+    }
+    .hotel-button-plus,
+    .suite-button-plus {
+        text-align: right;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    .test{
+        height: 80%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 700px){
+    .hotel-descriptionSmall-small
+    .suite-descriptionSmall-small {
+        font-size: 0.85em;
+    }
+}
+
+@media (min-width: 800px) {
+    .suite-pic {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1070px) {
+    .hotel-description-small,
+    .suite-description-small {
+        display: block;
     }
 }
 

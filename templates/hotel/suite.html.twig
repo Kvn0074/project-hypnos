@@ -24,7 +24,8 @@
         <div class="container-fluid presentation-container">
             <div class="row presentation-row">
                 <div class="col-md-6 presentation-main">
-                    <h2 class="presentation-title">La suite {{ suite.nom }}</h2>
+                    <h2 class="suite-title">La suite {{ suite.nom }}</h2>
+                    <h2 class="suite-price">{{ (suite.prix/100) }} € par nuit</h2>
                 </div>
                 <div class="col-md-6 presentation-texts">
                     <p class="presenation-text">Notre promesse dans tout les hotel Hypnos est de vous offrir
@@ -43,9 +44,22 @@
     <!--=================================================-->
 
     <section class="section-separator-home">
-
         <div class="separator-home">
         </div>
+    </section>
+
+    <!--=================================================-->
+    <!--==========| G A L L E R Y |======================-->
+    <!--=================================================-->
+
+    <section class="gallery-section">
+
+        <div class="pics-gallery">
+            <img class="suite-pic" src="/uploads/files/{{ suite.photoPrincipale }}">
+            <img class="suite-pic" src="/uploads/files/{{ suite.photoDeux }}">
+            <img class="suite-pic" src="/uploads/files/{{ suite.photo3 }}">
+        </div>
+
     </section>
 
     <!--=================================================-->
@@ -53,17 +67,53 @@
     <!--=================================================-->
 
     <section class="section-separator-home">
-
         <div class="separator-home">
         </div>
     </section>
 
+    <!--=================================================-->
+    <!--==========| R E S E R V A T I O N |==============-->
+    <!--=================================================-->
 
-    {%  for etablissement in etablissements %}
-        {% if etablissement.nom == suite.idHotel %}
-            <a href="{{ path('app_hotel',{'slug' : etablissement.slug } ) }}"> retour hotel {{ etablissement.nom }}</a>
-        {% endif %}
-    {% endfor %}
+    <section class="reservation-section">
+
+
+        <div class="container-fluid button-container">
+
+            <div class="row button-row">
+
+                <div class="col-md-4 button-col">
+                    <div class="button button-resa-us">
+                        <h2 class="button-text">reservez avec nous</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4 button-col">
+                    <div class="button button-resa-booking">
+                        <h2 class="button-text">reservez sur Booking</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-4 button-col">
+                    {%  for etablissement in etablissements %}
+                        {% if etablissement.nom == suite.idHotel %}
+
+                            <a href="{{ path('app_hotel',{'slug' : etablissement.slug } ) }}">
+                                <div class="button back-to-button">
+                                    <h2 class="button-text">retour hotel {{ etablissement.nom }}</h2>
+                                </div>
+                            </a>
+
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 {% endblock %}
 
