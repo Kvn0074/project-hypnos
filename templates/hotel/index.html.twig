@@ -8,7 +8,7 @@
 
     <header class="header-hotel">
         <div class="hotel">
-            <img class="hotel-picture" src="uploads/files/{{ etablissement.photo }}">
+            <img class="hotel-picture" src="/uploads/files/{{ etablissement.photo }}">
 
             <div class="hotel-information">
                 <h1 class="hotel-name">{{ etablissement.nom }}</h1>
@@ -61,7 +61,7 @@
             {% if etablissement.nom == suite.idHotel %}
             <div class="row suite-row">
                 <div class="col-sm-6 suite-picture-div">
-                    <img class="suite-picture-small" src="uploads/files/{{ suite.photoPrincipale }}">
+                    <img class="suite-picture-small" src="/uploads/files/{{ suite.photoPrincipale }}">
                 </div>
                 <div class="col-sm-6 suite-description-div">
                     <div class="test">

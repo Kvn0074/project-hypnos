@@ -19,7 +19,7 @@ class HotelController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/{slug}', name: 'app_hotel')]
+    #[Route('/hotel/{slug}', name: 'app_hotel')]
     public function index($slug): Response
     {
         $etablissement = $this->entityManager->getRepository(Etablissement::class)->findOneBySlug($slug);
