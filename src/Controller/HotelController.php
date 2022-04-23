@@ -34,18 +34,18 @@ class HotelController extends AbstractController
         ]);
     }
 
-    #[Route('/suite/{slug}', name: 'app_suite')]
-    public function show($slug): Response
+    #[Route('/hotel/{slug}/{nom_suite}', name: 'app_suite')]
+    public function show($slug, $nom_suite): Response
     {
-        $suite = $this->entityManager->getRepository(Suite::class)->findOneBySlug($slug);
-        $etablissements = $this->entityManager->getRepository(Etablissement::class)->findAll();
+        $suite = $this->entityManager->getRepository(Suite::class)->findOneBySlug($nom_suite);
+        $etablissement = $this->entityManager->getRepository(Etablissement::class)->findOneBySlug($slug);
 
         if(!$suite) {
             return $this->redirectToRoute('app_home');
         }
         return $this->render('hotel/suite.html.twig', [
             'suite' => $suite,
-            'etablissements' => $etablissements
+            'etablissement' => $etablissement
         ]);
     }
 }

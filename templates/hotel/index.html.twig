@@ -69,7 +69,7 @@
                         <p class="suite-descriptionSmall-small">{{ suite.descriptionIntro }}</p>
                         <p class="suite-description-small">{{ suite.description }}</p>
                     </div>
-                    <a href="{{ path('app_suite',{'slug' : suite.slug } ) }}">
+                    <a href="{{ path('app_suite',{'slug' : etablissement.slug, 'nom_suite' : suite.slug } ) }}">
                         <div class="suite-button-plus">
                             <span class="suite-button-text">En Savoir Plus</span>
                         </div>
