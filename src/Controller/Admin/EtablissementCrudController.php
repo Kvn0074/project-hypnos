@@ -21,14 +21,14 @@ class EtablissementCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-           TextField::new('nom'),
+           TextField::new('nom', "Nom de L'hotel"),
            SlugField::new('slug')->setTargetFieldName('nom'),
-           TextField::new('adresse'),
-           TextField::new('ville'),
-           IntegerField::new('code_postale'),
-           TextField::new('description_intro'),
-           TextareaField::new('description'),
-           ImageField::new('photo')
+           TextField::new('adresse', "Adresse de l'établissement"),
+           TextField::new('ville', "Ville"),
+           IntegerField::new('code_postale', 'Code postale'),
+           TextField::new('description_intro',"Introduction de la description"),
+           TextareaField::new('description', 'Description'),
+           ImageField::new('photo', "Photo de l'établissement")
                ->setBasePath('uploads/files')
                ->setUploadDir('public/uploads/files')
         ];

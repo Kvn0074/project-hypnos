@@ -23,22 +23,22 @@ class SuiteCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('nom'),
+            TextField::new('nom', 'Nom de la suite'),
             SlugField::new('slug')->setTargetFieldName('nom'),
-            TextField::new('description_intro'),
-            TextareaField::new('description'),
-            MoneyField::new('prix')->setCurrency('EUR'),
-            ImageField::new('photo_principale')
+            TextField::new('description_intro', 'Introduction de la description'),
+            TextareaField::new('description','Description'),
+            MoneyField::new('prix', 'Prix par nuit (ne pas mettre le sigle €)')->setCurrency('EUR'),
+            ImageField::new('photo_principale', 'Photo principale')
                 ->setBasePath('uploads/files')
                 ->setUploadDir('public/uploads/files'),
-            ImageField::new('photo_deux')
+            ImageField::new('photo_deux', 'Deuxième photo')
                 ->setBasePath('uploads/files')
                 ->setUploadDir('public/uploads/files'),
-            ImageField::new('photo_3')
+            ImageField::new('photo_3', 'Troisième photo')
                 ->setBasePath('uploads/files')
                 ->setUploadDir('public/uploads/files'),
-            UrlField::new('url_booking'),
-            AssociationField::new('id_hotel')
+            UrlField::new('url_booking', 'Lien Booking.com'),
+            AssociationField::new('id_hotel', "Nom de l'hotel")
         ];
     }
 
