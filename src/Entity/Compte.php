@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Entity\Traits\IdTrait;
 use App\Entity\Traits\ToggleableTrait;
 use App\Repository\CompteRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -33,6 +34,34 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 50)]
     private $prenom;
+
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+    public function __toString() {
+        return $this->getTest();
+    }
+
+    public function getTest() {
+        {
+            $conn = $this->getEntityManager()->getConnection();
+
+            $sql = '
+            SELECT nom FROM compte
+            WHERE roles = ROLE_GERANT
+            ';
+            $stmt = $conn->prepare($sql);
+            $resultSet = $stmt->executeQuery(['price' => $price]);
+
+            // returns an array of arrays (i.e. a raw data set)
+            return $resultSet->fetchAllAssociative();
+        }
+    }
+
 
     public function getId(): ?int
     {
@@ -68,6 +97,7 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $roles = $this->roles;
         // guarantee every user at least has ROLE_USER
+        // permet de n'afficher que gerant ou utilisateur dans le crud
         if (in_array("ROLE_GERANT", $roles )){
             $roles[] = 'ROLE_GERANT';
         } else {
@@ -110,6 +140,7 @@ class Compte implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getNom(): ?string
     {
+
         return $this->nom;
     }
 
